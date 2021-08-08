@@ -4,7 +4,7 @@ draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_center);
 draw_set_alpha(1);
-
+//New code
 
 var _page = main_menu.menu_pages[main_menu.page_index];
 for (var w = 0; w < _page.grid_width; w++)

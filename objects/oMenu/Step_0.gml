@@ -167,10 +167,13 @@ for (var w = 0; w < _page.grid_width; w++)
 					x_place	       = set_x_place;
 					y_place		   = set_y_place;
 					option_x_place = set_x_place + option_x_offset;
-					option_y_place = set_y_place + option_y_offset;		
-					option_color = merge_color(option_color,c_dkgray,0.2);
+					option_y_place = set_y_place + option_y_offset;	
 					
-					if (times_selected > 0)
+				    if (times_selected == 0) 
+					{
+						option_color = merge_color(option_color,c_dkgray,0.2);
+					}
+					else if (times_selected > 0)
 					{	
 						other.inputting = true;	
 						

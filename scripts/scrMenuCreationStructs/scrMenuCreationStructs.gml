@@ -34,7 +34,7 @@ function PageElementBlank(_name) : CreatePageElement(_name) constructor {
 	type    = instanceof(self);
 }
 
-function PageElementSwitch(_name,_script,_selected_option,_array,_halign,_valign,_option_halign,_option_valign,_option_x_offset,_option_y_offset) : CreatePageElement(_name) constructor {
+function PageElementSwitch(_name,_script,_selected_option,_array,_halign,_valign,_option_halign,_option_valign,_option_x_offset,_option_y_offset,_arrow_offset) : CreatePageElement(_name) constructor {
 	type    = instanceof(self);
 	script_ = _script;
 	h_align = _halign;
@@ -54,6 +54,7 @@ function PageElementSwitch(_name,_script,_selected_option,_array,_halign,_valign
 	
 	left_button = 0;
 	right_button = 0;
+	arrow_offset = _arrow_offset;
 }
 
 function PageElementToggle(_name, _script, _selected_option,_option_1, _option_2,_halign,_valign,_option_offset) : CreatePageElement(_name) constructor {

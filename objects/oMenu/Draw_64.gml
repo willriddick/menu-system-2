@@ -38,8 +38,8 @@ for (var w = 0; w < _page.grid_width; w++)
 						color,color,color,color,alpha);
 				
 					//DRAW OPTION
-					DrawSet(font,option_h_align,option_v_align);	
-					draw_text_transformed_color(option_x_place,option_y_place,display_text,x_scale,y_scale,angle,
+					DrawSet(font,h_align,v_align);	
+					draw_text_transformed_color(option_x_place,option_y_place,display_text,option_x_scale,option_y_scale,angle,
 						option_color,option_color,option_color,option_color,alpha);
 
 					if (times_selected > 0) 

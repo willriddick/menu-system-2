@@ -163,36 +163,20 @@ for (var w = 0; w < _page.grid_width; w++)
 			{
 				case "PageElementSwitch":
 					display_text = string(option_array[selected_option]);	
-
+					var _height = (string_height(display_text) * 1.2);
 					x_place	       = set_x_place;
-					y_place		   = set_y_place;
-					option_x_place = set_x_place + option_x_offset;
-					option_y_place = set_y_place + option_y_offset;	
+					y_place		   = set_y_place - _height/2;
+					option_x_place = set_x_place;
+					option_y_place = set_y_place + _height/2;	
 					
-				    if (times_selected == 0) 
-					{
-						option_color = merge_color(option_color,c_dkgray,0.2);
-					}
-					else if (times_selected > 0)
+				    if (times_selected == 0) option_color = merge_color(option_color,c_dkgray,0.2);
+					else option_color = merge_color(option_color,c_white,0.2);	
+					
+					if (times_selected > 0)
 					{	
 						other.inputting = true;	
-						
-						option_color = merge_color(option_color,c_white,0.2);	
-						display_text = string(option_array[selected_option]);	
-				
-						//KEYBOARD INPUT
-						if (left) 
-						{
-							PlaySound(other.sound_select,5,0.75,1.25,false);
-							selected_option--;
-						}
-						if (right) 
-						{
-							PlaySound(other.sound_select,5,0.75,1.25,false);
-							selected_option++;	
-						}
-						
-						//MOUSE INPUT
+
+						//INPUT
 						var _width = string_width(display_text);
 						var _size = 16;
 						
@@ -200,7 +184,8 @@ for (var w = 0; w < _page.grid_width; w++)
 							option_x_place-(_width/2 + _size * 2),option_y_place,_size);
 						right_button = new CreateButton(">>",other._mouse_x,other._mouse_y,
 							option_x_place+(_width/2 + _size * 2),option_y_place,_size);	
-											
+									
+									
 						if (mouse_enter) && (left_button.mouse_hovering) 
 						{
 							PlaySound(other.sound_select,5,0.75,1.25,false);
@@ -211,6 +196,23 @@ for (var w = 0; w < _page.grid_width; w++)
 							PlaySound(other.sound_select,5,0.75,1.25,false);
 							selected_option++;
 						}
+						if (left) 
+						{
+							PlaySound(other.sound_select,5,0.75,1.25,false);
+							left_button.x_scale = 1.2;
+							left_button.y_scale = 1.2;
+							left_button.color = c_white;
+							selected_option--;
+						}
+						if (right) 
+						{
+							PlaySound(other.sound_select,5,0.75,1.25,false);
+							right_button.x_scale = 1.2;
+							right_button.y_scale = 1.2;
+							right_button.color = c_white;
+							selected_option++;	
+						}
+						
 						
 						//LOOP OPTION
 						selected_option = Loop(selected_option,0,option_array_length-1)
@@ -230,8 +232,7 @@ for (var w = 0; w < _page.grid_width; w++)
 							color = merge_color(color,c_gray,0.2);
 							x_scale = lerp(x_scale,1,0.3);
 							y_scale = lerp(y_scale,1,0.3);
-						}
-							
+						}							
 					}	
 				break;
 				

@@ -45,10 +45,10 @@ var _audio = new CreateMenuPage("SETTINGS",_element_grid,room_width/2,room_heigh
 //GRAPHICS
 var _element_grid = ds_grid_create(1,3);
 ds_grid_clear(_element_grid,new PageElementBlank(""));
-_element_grid[# 0,0] = new PageElementToggle("FULLSCREEN",Fullscreen,false,"ON","OFF",fa_right,fa_center,16);
-_element_grid[# 0,1] = new PageElementSwitch("RESOLUTION",Resolution,0,["ONE","TWO","THREE","FOUR","FIVE"],fa_center,fa_center,fa_center,fa_center);
+_element_grid[# 0,0] = new PageElementToggle("FULLSCREEN",Fullscreen,false,"ON","OFF",fa_right,fa_center,4);
+_element_grid[# 0,1] = new PageElementSwitch("RESOLUTION",Resolution,0,["ONE","TWO","THREE","FOUR","FIVE"],fa_center,fa_center,64);
 _element_grid[# 0,2] = new PageElementTransfer("BACK",1);
-var _graphics = new CreateMenuPage("SETTINGS",_element_grid,room_width/2,room_height/2,128,36);
+var _graphics = new CreateMenuPage("SETTINGS",_element_grid,room_width/2,room_height/2,128,32);
 
 
 main_menu = new CreateMenu("main_menu",_main,_settings,_preferences,_audio,_graphics);

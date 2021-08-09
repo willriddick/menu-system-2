@@ -167,23 +167,26 @@ for (var w = 0; w < _page.grid_width; w++)
 					x_place	       = set_x_place;
 					y_place		   = set_y_place - _height/2;
 					option_x_place = set_x_place;
-					option_y_place = set_y_place + _height/2;	
+					option_y_place = set_y_place + _height/2;		
 					
-				    if (times_selected == 0) option_color = merge_color(option_color,c_dkgray,0.2);
-					else option_color = merge_color(option_color,c_white,0.2);	
-					
-					if (times_selected > 0)
+					if (times_selected == 0)
+					{
+						option_color = merge_color(option_color,c_dkgray,0.2);
+						option_x_scale = lerp(x_scale,1,0.3);
+						option_y_scale = lerp(y_scale,1,0.3);	
+					}
+					else if (times_selected > 0)
 					{	
 						other.inputting = true;	
+						option_color = merge_color(option_color,c_dkgray,0.2);
+						option_x_scale = lerp(x_scale,1.2,0.3);
+						option_y_scale = lerp(y_scale,1.2,0.3);
 
 						//INPUT
-						var _width = string_width(display_text);
-						var _size = 16;
-						
 						left_button  = new CreateButton("<<",other._mouse_x,other._mouse_y,
-							option_x_place-(_width/2 + _size * 2),option_y_place,_size);
+							option_x_place - arrow_offset,option_y_place,_height);
 						right_button = new CreateButton(">>",other._mouse_x,other._mouse_y,
-							option_x_place+(_width/2 + _size * 2),option_y_place,_size);	
+							option_x_place + arrow_offset,option_y_place,_height);	
 									
 									
 						if (mouse_enter) && (left_button.mouse_hovering) 

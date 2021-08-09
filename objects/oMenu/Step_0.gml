@@ -192,14 +192,13 @@ for (var w = 0; w < _page.grid_width; w++)
 							selected_option++;	
 						}
 						
-						//MOUSE INPUT
-						var _width = string_width(display_text);
+						//MOUSE INPUT				
 						var _size = 16;
 						
 						left_button  = new CreateButton("<<",other._mouse_x,other._mouse_y,
-							option_x_place-(_width/2 + _size * 2),option_y_place,_size);
+							option_x_place-arrow_offset,option_y_place,_size);
 						right_button = new CreateButton(">>",other._mouse_x,other._mouse_y,
-							option_x_place+(_width/2 + _size * 2),option_y_place,_size);	
+							option_x_place+arrow_offset,option_y_place,_size);	
 											
 						if (mouse_enter) && (left_button.mouse_hovering) 
 						{
